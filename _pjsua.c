@@ -3663,8 +3663,8 @@ static PyObject *py_pjsua_call_dial_dtmf(PyObject *pSelf, PyObject *pArgs)
         return NULL;
     }
 
-    if (!PyBytes_Check(pDigits))
-	return Py_BuildValue("i", PJ_EINVAL);
+    /*if (!PyBytes_Check(pDigits))
+	return Py_BuildValue("i", PJ_EINVAL);*/
 
     digits = PyUnicode_ToPJ(pDigits);
     status = pjsua_call_dial_dtmf(call_id, &digits);
